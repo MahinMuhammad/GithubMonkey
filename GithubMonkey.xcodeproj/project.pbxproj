@@ -38,6 +38,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002E6D2B2AEE94CD0073A383 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				002E6D252AEE82860073A383 /* NetworkManager.swift */,
+				002E6D272AEE847D0073A383 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		002E6D2C2AEE94DA0073A383 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00D197082AEE4E1E00170719 /* FollowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		002E6D2D2AEE94E10073A383 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				002E6D292AEE8A000073A383 /* FolllowViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		00D196FA2AEE4E1D00170719 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				00D197062AEE4E1E00170719 /* GithubMonkeyApp.swift */,
-				00D197082AEE4E1E00170719 /* FollowView.swift */,
-				002E6D292AEE8A000073A383 /* FolllowViewModel.swift */,
-				002E6D252AEE82860073A383 /* NetworkManager.swift */,
-				002E6D272AEE847D0073A383 /* UserModel.swift */,
+				002E6D2B2AEE94CD0073A383 /* Model */,
+				002E6D2C2AEE94DA0073A383 /* View */,
+				002E6D2D2AEE94E10073A383 /* ViewModel */,
 				00D1970A2AEE4E1F00170719 /* Assets.xcassets */,
 				00D1970C2AEE4E1F00170719 /* Preview Content */,
 			);

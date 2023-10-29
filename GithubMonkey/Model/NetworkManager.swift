@@ -8,10 +8,10 @@
 import Foundation
 
 final class NetworkManager{
-    let urlString = "https://api.github.com/users/MahinMuhammad/followers"
+    var urlString = "https://api.github.com/users/MahinMuhammad/"
     
     func fetchData(listOf:String, completion: @escaping ([UserModel], Error?)->Void){
-        if let url = URL(string: urlString){
+        if let url = URL(string: "\(urlString)\(listOf)?per_page=100"){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if let error{
@@ -23,6 +23,7 @@ final class NetworkManager{
                         do{
                             let result = try decoder.decode([UserModel].self, from: data)
                             DispatchQueue.main.async {
+                                print("Data fetch successful with \(result.count) user")
                                 completion(result, nil)
                             }
                         }catch{
