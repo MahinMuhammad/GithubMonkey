@@ -11,9 +11,34 @@ struct ContentView: View {
     @StateObject var viewModel = FolllowViewModel()
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(alignment: .leading) {
+                Text(viewModel.getSubHedding())
+                    .font(.system(size: 16))
+                    .foregroundStyle(.gray)
+                    .padding(.top,-15)
+                
                 List(viewModel.getUsersToPopulateList()){user in
-                    Text(user.username)
+                    HStack(alignment: .top){
+                        AsyncImage(url: URL(string: user.avatar_url)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipped()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                        } placeholder: {
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipped()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                        }
+                        
+                        Text(user.username)
+                            .font(.system(size: 18.5))
+                    }
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
             }
@@ -44,7 +69,6 @@ struct ContentView: View {
                         }
                     } label: {
                         Label("Option", systemImage: "ellipsis")
-                            .foregroundStyle(Color(UIColor.label))
                     }
                 }
             }

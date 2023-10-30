@@ -22,7 +22,6 @@ final class FolllowViewModel:ObservableObject{
     
     func getUsersToPopulateList()->[UserModel]{
         switch selectedListType{
-            
         case .followers:
             return followers
         case .following:
@@ -34,13 +33,23 @@ final class FolllowViewModel:ObservableObject{
     
     func getTitle()->String{
         switch selectedListType{
-            
         case .followers:
             return "Followers"
         case .following:
             return "Following"
         case .nonfollowers:
             return "Nonfollowers"
+        }
+    }
+    
+    func getSubHedding()->String{
+        switch selectedListType{
+        case .followers:
+            return "These are the people follow you"
+        case .following:
+            return "These are the people you follow"
+        case .nonfollowers:
+            return "People doesn't follow you back"
         }
     }
     

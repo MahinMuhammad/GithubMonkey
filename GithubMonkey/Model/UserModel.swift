@@ -13,4 +13,5 @@ struct UserModel:Decodable, Identifiable{
         return login
     }
     let login:String
+    let avatar_url:String
 }
