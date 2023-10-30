@@ -8,20 +8,46 @@
 import Foundation
 
 enum listOf{
-    case follower
+    case followers
     case following
+    case nonfollowers
 }
 
 final class FolllowViewModel:ObservableObject{
-    var followers: [UserModel] = []
-    var following: [UserModel] = []
+    @Published  var followers: [UserModel] = []
+    @Published  var following: [UserModel] = []
+    @Published var nonfollowers: [UserModel] = []
+    @Published var selectedListType = listOf.followers
     let networkManager = NetworkManager()
-    @Published var usersNotFollowers: [UserModel] = []
+    
+    func getUsersToPopulateList()->[UserModel]{
+        switch selectedListType{
+            
+        case .followers:
+            return followers
+        case .following:
+            return following
+        case .nonfollowers:
+            return nonfollowers
+        }
+    }
+    
+    func getTitle()->String{
+        switch selectedListType{
+            
+        case .followers:
+            return "Followers"
+        case .following:
+            return "Following"
+        case .nonfollowers:
+            return "Nonfollowers"
+        }
+    }
     
     func loadList(){
         followers = []
         following = []
-        usersNotFollowers = []
+        nonfollowers = []
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
@@ -45,7 +71,7 @@ final class FolllowViewModel:ObservableObject{
         }
         
         dispatchGroup.notify(queue: .main) {
-            self.usersNotFollowers = self.following.filter{user in !self.followers.contains(where: {user.id == $0.id})}
+            self.nonfollowers = self.following.filter{user in !self.followers.contains(where: {user.id == $0.id})}
         }
     }
 }
