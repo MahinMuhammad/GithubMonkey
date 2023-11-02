@@ -50,7 +50,7 @@ If you like this app, please do not forget to star ★ this repository and follo
     <li>Build and run the project on simulator or your device.</li>
 </ol> 
 
-## Find Me on:
+### Find Me on:
 
 [FaceBook](https://web.facebook.com/mahin5muhammad)
 [Instagram](https://www.instagram.com/mahin5muhammad/)
@@ -60,20 +60,20 @@ If you like this app, please do not forget to star ★ this repository and follo
 [Discord](http://discordapp.com/users/Ghost_Friday#2625)
 
 
-## Contributing
+### Contributing
 
 Contributions to GithubMonkey are welcome! If you encounter any issues or have ideas for improvements, 
 please feel free to open an issue or submit a pull request.
 
-## Feedback
+### Feedback
 
-Please feel free to open any [issue](https://github.com/MahinMuhammad/CheckBoxSwiftUI/issues)
+Please feel free to open any [issue](https://github.com/MahinMuhammad/GithubMonkey/issues)
 
-## License
+### License
 
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 
-## Author
+### Author
 
 Md. Mahinur Rahman, iOS Developer
 
