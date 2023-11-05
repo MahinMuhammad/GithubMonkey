@@ -34,6 +34,7 @@ final class FolllowViewModel:ObservableObject{
     @Published  var following: [UserModel] = []
     @Published var nonfollowers: [UserModel] = []
     @Published var selectedListType = listOf.followers
+    @Published var showCopiedToClipboardAlert = false
     let networkManager = NetworkManager()
     
     func getUsersToPopulateList()->[UserModel]{
