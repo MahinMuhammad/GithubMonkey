@@ -41,10 +41,12 @@ struct FloatingAlertView: View {
         .background(Color.gray.opacity(opacityValue))
         .cornerRadius(cornerRadiousVlaue)
         .transition(.scale)
-        .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + activeTime, execute: {
-                self.showingNotice = false
-            })
-        })
+        .onAppear{
+            withAnimation {
+                DispatchQueue.main.asyncAfter(deadline: .now() + activeTime){
+                    self.showingNotice = false
+                }
+            }
+        }
     }
 }
