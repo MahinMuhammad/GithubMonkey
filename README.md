@@ -39,6 +39,7 @@ If you like this app, please do not forget to star ★ this repository and follo
   <li>Show followers from github</li>
   <li>Show following from github</li>
   <li>Show any you follow but does not follow you back</li>
+  <li>Tapping on row copies username to clip board</li>
 </ul> 
 
 <h3>Getting Started</h3>
